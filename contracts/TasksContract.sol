@@ -3,7 +3,7 @@ pragma solidity 0.8.14;
 
 contract TasksContract {
 
-    uint public taskId = 0;
+    uint public taskCounter = 0;
 
     constructor (){ //executes the first time
         createTask("Sample task", "Gotta do something");
@@ -33,9 +33,9 @@ contract TasksContract {
         /* title and description don't need to be stored in the blockchain, 
         just in memory while executing. That's why we use "memory"*/
         //block has a property called timestamp and it has the current time when the data is stored
-        taskId++;
-        tasks[taskId] = Task(taskId, _title, _description, false, block.timestamp);
-        emit TaskCreated(taskId, _title, _description, false, block.timestamp);
+        taskCounter++;
+        tasks[taskCounter] = Task(taskCounter, _title, _description, false, block.timestamp);
+        emit TaskCreated(taskCounter, _title, _description, false, block.timestamp);
     }
 
     function toggleDone(uint _id) public {

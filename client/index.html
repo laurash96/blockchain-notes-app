@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./main.css" />
+    
     <title>Tasks Manager Application</title>
 </head>
+
 <body>
-    <h1>Tasks Manager Application</h1>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-body bg-dark mb-4">
+                    <h1>Task Manager Application</h1>
+                    <h6 class="text-muted">Task App</h6>
+                    <span>Wallet</span>
+                    <span id="account"></span>
+                </div>
+                <form class="card card-body bg-dark" id="taskForm">
+                    <h4>Add task</h4>
+                    <input type="text" name="title" placeholder="Task title" class="form-control bg-dark text-white my-2 border-0">
+                    <textarea rows="4" name="description" class="form-control bg-dark text-white border-0"
+                        placeholder="I have to do..."></textarea>
+                    <button class="btn btn-primary my-2">Save</button>
+                </form>
+            </div>
+            <div class="col-md-8">
+                <div id="tasksList">Tasks List</div>
+            </div>
+        </div>
+
+        <script src="./libs/@truffle/contract/dist/truffle-contract.js"></script>
+        <script src="./app.js"></script>
+        <script src="./ui.js"></script>
+
 </body>
+
 </html>
