@@ -33,7 +33,18 @@
                 <div id="tasksList">Tasks List</div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-md-4 mt-4">
+                <form class="card card-body bg-dark" id="taskFormUpdate">
+                    <h4>Update task</h4>
+                    <input type="text" name="task_id" placeholder="Task ID" class="form-control bg-dark text-white my-2 border-0">
+                    <input type="text" name="title" placeholder="Task title" class="form-control bg-dark text-white my-2 border-0">
+                    <textarea rows="4" name="description" class="form-control bg-dark text-white border-0"
+                        placeholder="I have to do..."></textarea>
+                    <button class="btn btn-primary my-2">Update</button>
+                </form>
+            </div>
+        </div>
         <script src="./libs/@truffle/contract/dist/truffle-contract.js"></script>
         <script src="./app.js"></script>
         <script src="./ui.js"></script>

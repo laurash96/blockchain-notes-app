@@ -58,7 +58,9 @@ App = {
         // Creating a task Card
         let taskElement = `<div class="card bg-dark rounded-0 mb-2 my-2">
           <div class="card-header d-flex justify-content-between align-items-center">
-            <span>${taskTitle}</span>
+            
+          <span>Task ID: ${taskId}</span>
+          <span>${taskTitle}</span>
             <div class="form-check form-switch">
               <input class="form-check-input" data-id="${taskId}" type="checkbox" onchange="App.toggleDone(this)" ${
                 taskDone === true && "checked"
@@ -97,5 +99,16 @@ App = {
         from: App.account,
       });
       window.location.reload();
+    },
+
+    updateTask: async (id, title, description) => {
+      try {
+        const result = await App.tasksContract.updateTask(id, title, description, {
+          from: App.account,
+        });
+        window.location.reload();
+      } catch (error) {
+        console.error(error);
+      }
     },
   };

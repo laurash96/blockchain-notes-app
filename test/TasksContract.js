@@ -15,7 +15,7 @@ contract("TasksContract", () =>{
   })
 
   it("Get tasks list", async () =>{
-     const tasksCounter = await this.tasksContract.taskId();
+     const tasksCounter = await this.tasksContract.taskCounter();
      const task = await this.tasksContract.tasks(tasksCounter);
 
      assert.equal(task.id.toNumber(), tasksCounter);
@@ -28,7 +28,7 @@ contract("TasksContract", () =>{
   it("Successful task creation", async () =>{
     const result = await this.tasksContract.createTask("Second task", "Second description");
     const taskEvent = result.logs[0].args;
-    const taskCounter = await this.tasksContract.taskId();
+    const taskCounter = await this.tasksContract.taskCounter();
 
     assert.equal(taskCounter, 2);
     assert.equal(taskEvent.id.toNumber(), 2);
